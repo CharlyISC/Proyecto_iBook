@@ -15,10 +15,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from api.views import Home
+from api.views import Home, Signup, Signout, Signin, About, Contact, ShopS, Shop, Table, Forgot, Chart
+from api import views
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
     path('',Home.as_view(),name='index'),
+    path('about/',About.as_view(),name='about'),
+    path('contact/',Contact.as_view(),name='contact'),
+    path('shops/',ShopS.as_view(),name='shops'),
+    path('shop/',Shop.as_view(),name='shop'),
+    #path('signin/',Signin.as_view(),name='signin'),
+    #path('signup/',Signup.as_view(),name='signup'),
+    path('signin/',Signin.as_view(),name='signin'),
+    path('signup/',Signup.as_view(), name='signup'),
+    path('logout/',Signout.as_view(), name='logout'),
+    path('forgot/',Forgot.as_view(), name='forgot'),
+    path('table/',Table.as_view(), name='table'),
+    path('chartjs/',Chart.as_view(), name='chartjs'),
+    #path('acceso/',views.acceso, name='acceso'),  ,
+    path('enviar_correo/<str:asunto>/<str:correo>/<str:usuario>/<str:contra>/', views.enviar_correo, name='enviar_correo'),
+    path('export_excel/', views.export_to_excel, name='export_to_excel'),
+      
     
 ]
