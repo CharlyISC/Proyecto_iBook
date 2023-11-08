@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'APITESCHI.wsgi.application'
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 } """
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -91,6 +91,18 @@ DATABASES = {
         'PASSWORD': '123',
         'HOST': 'localhost', # Puede ser una dirección IP o un nombre de host
         'PORT': '', # Deja en blanco para usar el puerto predeterminado (5432)
+    }
+}
+"""
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'databooker',
+        'USER': 'databooker_user',
+        'PASSWORD': 'jKhh3O9hTYhlzFSN7LvZZIEopHN0Vw59',
+        'HOST': 'oregon-postgres.render.com', # Puede ser una dirección IP o un nombre de host
+        'PORT': '5432', # Deja en blanco para usar el puerto predeterminado (5432)
     }
 }
 
