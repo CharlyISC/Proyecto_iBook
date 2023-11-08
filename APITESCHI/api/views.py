@@ -162,7 +162,15 @@ class Table(APIView):
         usuarios = User.objects.all()  # Obtén todos los registros de la tabla auth_user
         return render(request, 'table.html', {'usuarios': usuarios})
     def post(self, request):
-        return render(request,self.template_name)    
+        return render(request,self.template_name)
+
+class Index2(APIView):
+    template_name="index2.html"
+    def get(self, request):
+         return render(request,self.template_name)
+    def post(self, request):
+        return render(request,self.template_name) 
+
 
 class Chart(APIView):
     template_name="chartjs.html"

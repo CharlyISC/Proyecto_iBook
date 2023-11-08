@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-vk#7er5*y)#v+-n-o8-23d^9pp=-r^174l0!hx@%lq-1i3is$1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -75,13 +75,24 @@ WSGI_APPLICATION = 'APITESCHI.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
+
+""" DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+} """
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'DataBooker',
+        'USER': 'postgres',
+        'PASSWORD': '123',
+        'HOST': 'localhost', # Puede ser una dirección IP o un nombre de host
+        'PORT': '', # Deja en blanco para usar el puerto predeterminado (5432)
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -120,6 +131,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIR=[
+    BASE_DIR/ "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

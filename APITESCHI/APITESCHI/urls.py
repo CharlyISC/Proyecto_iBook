@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from api.views import Home, Signup, Signout, Signin, About, Contact, ShopS, Shop, Table, Forgot, Chart
+from api.views import Home, Signup, Signout, Signin, About, Contact, ShopS, Shop, Table, Forgot, Chart, Index2
 from api import views
 
 urlpatterns = [
@@ -32,6 +32,7 @@ urlpatterns = [
     path('logout/',Signout.as_view(), name='logout'),
     path('forgot/',Forgot.as_view(), name='forgot'),
     path('table/',Table.as_view(), name='table'),
+    path('index2/',Index2.as_view(), name='index2'),
     path('chartjs/',Chart.as_view(), name='chartjs'),
     #path('acceso/',views.acceso, name='acceso'),  ,
     path('enviar_correo/<str:asunto>/<str:correo>/<str:usuario>/<str:contra>/', views.enviar_correo, name='enviar_correo'),
