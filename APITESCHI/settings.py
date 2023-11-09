@@ -25,6 +25,11 @@ SECRET_KEY = 'django-insecure-vk#7er5*y)#v+-n-o8-23d^9pp=-r^174l0!hx@%lq-1i3is$1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+if not DEBUG:
+    # Tell Django to copy statics to the `staticfiles` directory
+    # in your application directory on Render.
+    STATIC_ROOT = BASE_DIR / 'api/static'
+
 ALLOWED_HOSTS = ["*"]
 
 
