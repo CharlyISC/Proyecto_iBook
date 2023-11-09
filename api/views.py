@@ -15,7 +15,6 @@ from django.utils.datastructures import MultiValueDictKeyError
 from django.shortcuts import render
 #Exportar a excel
 from django.http import HttpResponse
-import openpyxl
 # Importa el modelo de usuarios de Django
 from django.contrib.auth.models import User 
 # Create your views here.
