@@ -4,13 +4,6 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-class Alumno(models.Model):
-    idAlumno = models.IntegerField(primary_key=True,db_column='idAlumno')
-    nameAlumno =models.CharField(max_length=100,db_column='nameAlumno')
-    class Meta:
-        db_table='Alumnos'
-
-
 class Libros(models.Model):
     idLibro = models.AutoField(primary_key=True,db_column='idLibro')
     Titulo = models.CharField(max_length=100,default='Titulo',db_column='Titulo')
@@ -43,6 +36,8 @@ class Favoritos(models.Model):
     fk_Libro = models.ForeignKey(Libros, on_delete=models.CASCADE, db_column='fk_Libro')
     class Meta:
         db_table= 'Favoritos'
+
+
 
 class Encuesta(models.Model):
     pregunta1 = models.TextField(db_column='Facilidad de uso del sistema')    
