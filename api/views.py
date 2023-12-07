@@ -176,7 +176,14 @@ class Chart(APIView):
     def get(self, request):
          return render(request,self.template_name)
     def post(self, request):
-        return render(request,self.template_name) 
+        return render(request,self.template_name)
+
+class BasicE(APIView):
+    template_name="basic_elements.html"
+    def get(self, request):
+         return render(request,self.template_name)
+    def post(self, request):
+        return render(request,self.template_name)  
 """    
 class Signin(APIView):
     template_name="signin.html"
@@ -210,7 +217,6 @@ def enviar_correo(request, correo, usuario, contra, asunto):
     
     return redirect('signin')
 
-def export_to_excel(request):
     response = HttpResponse(content_type='application/ms-excel')
     response['Content-Disposition'] = 'attachment; filename="usuarios.xlsx"'
 

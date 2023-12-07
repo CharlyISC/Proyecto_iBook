@@ -9,7 +9,7 @@
   src: url('typicons.eot?#iefix') format('embedded-opentype'),
        url('typicons.woff') format('woff'),
        url('typicons.ttf') format('truetype'),
-       url('typicons.svg#typicons') format('svg');
+       url('typicons.svg') format('svg');
 }
  
 /* :before psuedo-selector inserts and styles icon */

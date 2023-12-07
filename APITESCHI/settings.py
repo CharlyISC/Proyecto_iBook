@@ -172,3 +172,12 @@ EMAIL_HOST_PASSWORD = 'ijgq najz zevo dulk'
 # Configuracion opcional del correo
 DEFAULT_FROM_EMAIL = 'jhonygenial12@gmail.com'
 EMAIL_SUBJECT_PREFIX = '[iBook Pro: Asignación de contraseña]'
+"""
+# Usar Google Cloud Storage para almacenar archivos estáticos.
+STATIC_URL = 'https://storage.googleapis.com/databooker/static/'
+
+# Usar Google Cloud Storage para almacenar archivos de medios.
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+GS_BUCKET_NAME = 'databooker'
+
+"""

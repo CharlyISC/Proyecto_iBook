@@ -145,7 +145,7 @@
           </tbody>
         </table>
         
-          <a href="{% url 'export_to_excel' %}" class="btn btn-primary"id = "exportarExcel">Exportar a Excel</a>
+          <a href="" class="btn btn-primary"id = "exportarExcel">Exportar a Excel</a>
       </div>
 
 
@@ -160,42 +160,9 @@
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+  <script src="{% static 'js/filtro.js' %}"></script>
 
-  <script>
-    //Filtro
-    function filtrarTabla() {
-        var input, filter, table, tr, td, i, j, txtValue;
-        input = document.getElementById("buscarInput");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("miTabla");
-        tr = table.getElementsByTagName("tr");
-
-        for (i = 1; i < tr.length; i++) {
-        tr[i].style.display = "none";
-        td = tr[i].getElementsByTagName("td");
-        for (j = 0; j < td.length; j++) {
-            if (td[j]) {
-            txtValue = td[j].textContent || td[j].innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-                break;
-            }
-            }
-        }
-        }
-    }
-
-       //Aqui exporta al excel
-       function exportarExcel() {
-        var tabla = document.getElementById("miTabla");
-        var libro = XLSX.utils.table_to_book(tabla);
-        XLSX.writeFile(libro, "tabla.xlsx");
-    }
-
-    //Eventos
-    document.getElementById("buscarInput").addEventListener("keyup", filtrarTabla);
-    document.getElementById("exportarExcel").addEventListener("click", exportarExcel);
-    </script>
+  
 
   </body>
 </html>
