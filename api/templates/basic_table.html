@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+  {%if user.is_authenticated%}
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,8 +24,8 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-          <a class="navbar-brand brand-logo" href="../../index.html"><img src="../../images/logo.svg" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="{% url 'index' %}"><img src="{% static "img/logo.svg" %}" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="{% url 'index' %}"><img src="{% static "img/logo-mini.svg" %}" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="typcn typcn-th-menu"></span>
           </button>
@@ -333,7 +334,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
+            <a class="nav-link" href="{% url 'index' %}">
               <i class="typcn typcn-device-desktop menu-icon"></i>
               <span class="menu-title">Dashboard</span>
               <div class="badge badge-danger">new</div>
@@ -347,9 +348,9 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
               </ul>
             </div>
           </li>
@@ -361,7 +362,7 @@
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="../../pages/forms/basic_elements.html">Basic Elements</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'basic_elements' %}">Basic Elements</a></li>
               </ul>
             </div>
           </li>
@@ -373,7 +374,7 @@
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/charts/chartjs.html">ChartJs</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'chartjs' %}">ChartJs</a></li>
               </ul>
             </div>
           </li>
@@ -385,7 +386,7 @@
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/tables/basic-table.html">Basic table</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'basic_table' %}">Basic table</a></li>
               </ul>
             </div>
           </li>
@@ -397,7 +398,7 @@
             </a>
             <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/icons/mdi.html">Mdi icons</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a></li>
               </ul>
             </div>
           </li>
@@ -409,8 +410,8 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
               </ul>
             </div>
           </li>
@@ -422,8 +423,8 @@
             </a>
             <div class="collapse" id="error">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-404.html"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-500.html"> 500 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
               </ul>
             </div>
           </li>
@@ -1171,3 +1172,6 @@
 </body>
 
 </html>
+  {% else %}
+  <META HTTP-EQUIV="REFRESH" CONTENT="0;URL={% url 'signin'%}">
+  {% endif %}
