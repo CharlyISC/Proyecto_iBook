@@ -25090,7 +25090,7 @@ div.tagsinput span.tag a {
 }
 
 .navbar-breadcrumb {
-  background: #00c8bf;
+  background: #ae65fb;
   margin-top: 4.625rem;
 }
 
@@ -25127,7 +25127,7 @@ div.tagsinput span.tag a {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    border-right: 1px solid #56d3c9;
+    border-right: 1px solid #FFFFFF;
   }
 }
 
