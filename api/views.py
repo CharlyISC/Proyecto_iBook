@@ -192,6 +192,12 @@ class BasicTab(APIView):
     def post(self, request):
         return render(request,self.template_name)  
 
+class Login(APIView):
+    template_name="login.html"
+    def get(self, request):
+         return render(request,self.template_name)
+    def post(self, request):
+        return render(request,self.template_name)
 """    
 class Signin(APIView):
     template_name="signin.html"
