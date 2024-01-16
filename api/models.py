@@ -38,6 +38,9 @@ class Favoritos(models.Model):
         db_table= 'Favoritos'
 """
 
+class Evento(models.Model):
+    id_evento = models.AutoField(primary_key=True, db_column='idEvento')
+
 class Trampolin(models.Model):
     idTramp = models.AutoField(primary_key=True,db_column='idTramp')
     Nombre = models.CharField(max_length=100,default='Nombre',db_column='Nombre')
@@ -54,7 +57,6 @@ class Inflable(models.Model):
     Ancho = models.IntegerField(default='0',db_column='Ancho')
     Largo = models.IntegerField(default='0',db_column='Largo')
     Alto = models.IntegerField(default='0',db_column='Alto')
-    Alto = models.IntegerField(default='0',db_column='Alto')
     class Meta:
         db_table= 'Inflable'
 
@@ -66,6 +68,11 @@ class Toro(models.Model):
     Alto = models.IntegerField(default='0',db_column='Alto')
     class Meta:
         db_table= 'Toro'
+
+     
+
+class evento_trampolin(models.Model):
+    id
 
 class Encuesta(models.Model):
     pregunta1 = models.TextField(db_column='Facilidad de uso del sistema')    

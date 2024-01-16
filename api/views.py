@@ -198,6 +198,27 @@ class Login(APIView):
          return render(request,self.template_name)
     def post(self, request):
         return render(request,self.template_name)
+    
+class Inflable(APIView):
+    template_name="inflables.html"
+    def get(self, request):
+         return render(request,self.template_name)
+    def post(self, request):
+        return render(request,self.template_name)
+
+class Trampolin(APIView):
+    template_name="trampolines.html"
+    def get(self, request):
+         return render(request,self.template_name)
+    def post(self, request):
+        return render(request,self.template_name)
+
+class Toro(APIView):
+    template_name="toros.html"
+    def get(self, request):
+         return render(request,self.template_name)
+    def post(self, request):
+        return render(request,self.template_name)
 """    
 class Signin(APIView):
     template_name="signin.html"

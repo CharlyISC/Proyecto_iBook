@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   {%if user.is_authenticated%}
   <!-- Required meta tags -->
@@ -12,10 +11,16 @@
   <link rel="stylesheet" href="{% static 'css/typicons.css' %}">
   <link rel="stylesheet" href="{% static 'css/vendor.bundle.base.css' %}">
   <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="{% static 'css/select2.min.css' %}">
+  <!-- <link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">-->
+  <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="{% static 'css/styleChar.css' %}">
+  <link rel="stylesheet" href="{% static 'css/styleVL.css' %}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{% static '/img/favicon.png' %}" />
+  <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" />
+  <link rel="stylesheet" href="{% static 'scss/_navbar.scss' %}">
 </head>
 
 <body>
@@ -24,8 +29,8 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-          <a class="navbar-brand brand-logo" href="{% url 'index' %}"><img src="{% static 'img/logo.svg' %}" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="{% url 'index' %}"><img src="{% static 'img/logo-mini.svg' %}" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="{% url 'index' %}"><img src="{% static "img/logo.svg" %}" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="{% url 'index' %}"><img src="{% static "img/logo-mini.svg" %}" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="typcn typcn-th-menu"></span>
           </button>
@@ -35,7 +40,7 @@
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="{% static 'img/face5.jpg' %}" alt="profile"/>
+              <img src="../../images/faces/face5.jpg" alt="profile"/>
               <span class="nav-profile-name">Eugenia Mullins</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
@@ -44,7 +49,7 @@
                 Settings
               </a>
               <a class="dropdown-item">
-                <i class="typcn typcn-eject text-primary" "{% url 'logout'%}"></i>
+                <i class="typcn typcn-eject text-primary" href="{% url 'logout'%}"></i>
                 Logout
               </a>
             </div>
@@ -69,7 +74,7 @@
               <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                    <img src="{% static 'img/face4.jpg' %}" alt="image" class="profile-pic">
+                    <img src="../../images/faces/face4.jpg" alt="image" class="profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow">
                   <h6 class="preview-subject ellipsis font-weight-normal">David Grey
@@ -81,7 +86,7 @@
               </a>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                    <img src="{% static 'img/face2.jpg' %}" alt="image" class="profile-pic">
+                    <img src="../../images/faces/face2.jpg" alt="image" class="profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow">
                   <h6 class="preview-subject ellipsis font-weight-normal">Tim Cook
@@ -93,7 +98,7 @@
               </a>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                    <img src="{% static 'img/face3.jpg' %}" alt="image" class="profile-pic">
+                    <img src="../../images/faces/face3.jpg" alt="image" class="profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow">
                   <h6 class="preview-subject ellipsis font-weight-normal"> Johnson
@@ -274,7 +279,7 @@
             </div>
             <ul class="chat-list">
               <li class="list active">
-                <div class="profile"><img src="{% static 'img/face1.jpg' %}" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="../../images/faces/face1.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Thomas Douglas</p>
                   <p>Available</p>
@@ -282,7 +287,7 @@
                 <small class="text-muted my-auto">19 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="{% static 'img/face2.jpg' %}" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="../../images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <div class="wrapper d-flex">
                     <p>Catherine</p>
@@ -293,7 +298,7 @@
                 <small class="text-muted my-auto">23 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="{% static 'img/face3.jpg' %}" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="../../images/faces/face3.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Daniel Russell</p>
                   <p>Available</p>
@@ -301,7 +306,7 @@
                 <small class="text-muted my-auto">14 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="{% static 'img/face4.jpg' %}" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="../../images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <p>James Richardson</p>
                   <p>Away</p>
@@ -309,7 +314,7 @@
                 <small class="text-muted my-auto">2 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="{% static 'img/face5.jpg' %}" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="../../images/faces/face5.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Madeline Kennedy</p>
                   <p>Available</p>
@@ -317,7 +322,7 @@
                 <small class="text-muted my-auto">5 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="{% static 'img/face6.jpg' %}" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="../../images/faces/face6.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Sarah Graves</p>
                   <p>Available</p>
@@ -329,13 +334,8 @@
           <!-- chat tab ends -->
         </div>
       </div>
-      
-
-
-
       <!-- partial -->
       <!-- partial:../../partials/_sidebar.html -->
-      
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
@@ -445,12 +445,48 @@
         </ul>
       </nav>
       <!-- partial -->
-      <div class="main-panel">
+      <div class="main-panel">        
         <div class="content-wrapper">
-          <iframe title="Dashboard DataBooker" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=e98ecd4a-d8d1-4fec-a494-2606a59b57cc&autoAuth=true&ctid=dcec6cc1-cc36-4bdf-a82c-eaddb2de00ea" frameborder="0" allowFullScreen="true"></iframe>
-          
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Default form</h4>
+                  <p class="card-description">
+                    Basic form layout
+                  </p>
+                  <form class="forms-sample">
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Nombre</label>
+                      <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Ancho</label>
+                      <input type="number" class="form-control" id="exampleInputAncho" placeholder="Ancho">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Largo</label>
+                      <input type="number" class="form-control" id="exampleInputLargo" placeholder="Largo">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Alto</label>
+                      <input type="number" class="form-control" id="exampleInputAlto" placeholder="Alto">
+                    </div>
+                    <div class="form-check form-check-flat form-check-primary">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Remember me
+                      </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-      
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
@@ -481,10 +517,13 @@
   <script src="{% static 'js/todolist.js' %}"></script>
   <!-- endinject -->
   <!-- plugin js for this page -->
-  <script src="{% static 'js/Chart.min.js' %}"></script>
+  <script src="{% static 'js/typeahead.bundle.min.js' %}"></script>
+  <script src="{% static 'js/select2.min.js' %}"></script>
   <!-- End plugin js for this page -->
   <!-- Custom js for this page-->
-  <script src="{% static 'js/chart.js' %}"></script>
+  <script src="{% static 'js/file-upload.js' %}"></script>
+  <script src="{% static 'js/typeahead.js' %}"></script>
+  <script src="{% static 'js/select2.js' %}"></script>
   <!-- End custom js for this page-->
 </body>
 
