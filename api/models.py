@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-"""
+
 """
 class Libros(models.Model):
     idLibro = models.AutoField(primary_key=True,db_column='idLibro')
@@ -74,36 +74,7 @@ class Toro(models.Model):
 
 class evento_trampolin(models.Model):
     id
-"""
 
-class Trampolin(models.Model):
-    idTramp = models.AutoField(primary_key=True,db_column='idTramp')
-    Nombre = models.CharField(max_length=100,default='Nombre',db_column='Nombre')
-    Ancho = models.IntegerField(default='0',db_column='Ancho')
-    Largo = models.IntegerField(default='0',db_column='Largo')
-    Alto = models.IntegerField(default='0',db_column='Alto')
-    Resorte = models.IntegerField(default='0',db_column='Resorte')
-    class Meta:
-        db_table= 'Trampolin'
-
-class Inflable(models.Model):
-    idInfla = models.AutoField(primary_key=True,db_column='idInflable')    
-    Nombre = models.CharField(max_length=100,default='Nombre',db_column='Nombre')
-    Ancho = models.IntegerField(default='0',db_column='Ancho')
-    Largo = models.IntegerField(default='0',db_column='Largo')
-    Alto = models.IntegerField(default='0',db_column='Alto')
-    Alto = models.IntegerField(default='0',db_column='Alto')
-    class Meta:
-        db_table= 'Inflable'
-
-class Toro(models.Model):
-    idToro = models.AutoField(primary_key=True,db_column='idToro')    
-    Nombre = models.CharField(max_length=100,default='Nombre',db_column='Nombre')
-    Ancho = models.IntegerField(default='0',db_column='Ancho')
-    Largo = models.IntegerField(default='0',db_column='Largo')
-    Alto = models.IntegerField(default='0',db_column='Alto')
-    class Meta:
-        db_table= 'Toro'
 
 class Encuesta(models.Model):
     pregunta1 = models.TextField(db_column='Facilidad de uso del sistema')    
